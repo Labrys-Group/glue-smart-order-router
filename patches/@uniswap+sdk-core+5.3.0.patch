@@ -1,0 +1,47 @@
+diff --git a/node_modules/@uniswap/sdk-core/dist/index.js b/node_modules/@uniswap/sdk-core/dist/index.js
+index c3473ea..54b9395 100644
+--- a/node_modules/@uniswap/sdk-core/dist/index.js
++++ b/node_modules/@uniswap/sdk-core/dist/index.js
+@@ -1,8 +1,4 @@
+ 
+ 'use strict'
+ 
+-if (process.env.NODE_ENV === 'production') {
+-  module.exports = require('./sdk-core.cjs.production.min.js')
+-} else {
+-  module.exports = require('./sdk-core.cjs.development.js')
+-}
++module.exports = require('./sdk-core.cjs.development.js')
+diff --git a/node_modules/@uniswap/sdk-core/dist/sdk-core.cjs.development.js b/node_modules/@uniswap/sdk-core/dist/sdk-core.cjs.development.js
+index 443c693..af073bb 100644
+--- a/node_modules/@uniswap/sdk-core/dist/sdk-core.cjs.development.js
++++ b/node_modules/@uniswap/sdk-core/dist/sdk-core.cjs.development.js
+@@ -214,13 +214,21 @@ var ARBITRUM_SEPOLIA_ADDRESSES = {
+ };
+ // sepolia v3 addresses
+ var SEPOLIA_ADDRESSES = {
+-  v3CoreFactoryAddress: '0x0227628f3F023bb0B980b67D528571c95c6DaC1c',
+-  multicallAddress: '0xD7F33bCdb21b359c8ee6F0251d30E94832baAd07',
+-  quoterAddress: '0xEd1f6473345F45b75F8179591dd5bA1888cf2FB3',
+-  v3MigratorAddress: '0x729004182cF005CEC8Bd85df140094b6aCbe8b15',
+-  nonfungiblePositionManagerAddress: '0x1238536071E1c677A632429e3655c799b22cDA52',
+-  tickLensAddress: '0xd7f33bcdb21b359c8ee6f0251d30e94832baad07',
+-  swapRouter02Address: '0x3bFA4769FB09eefC5a80d6E87c3B9C650f7Ae48E'
++  // v3CoreFactoryAddress: '0x0227628f3F023bb0B980b67D528571c95c6DaC1c',
++  // multicallAddress: '0xD7F33bCdb21b359c8ee6F0251d30E94832baAd07',
++  // quoterAddress: '0xEd1f6473345F45b75F8179591dd5bA1888cf2FB3',
++  // v3MigratorAddress: '0x729004182cF005CEC8Bd85df140094b6aCbe8b15',
++  // nonfungiblePositionManagerAddress: '0x1238536071E1c677A632429e3655c799b22cDA52',
++  // tickLensAddress: '0xd7f33bcdb21b359c8ee6f0251d30e94832baad07',
++  // swapRouter02Address: '0x3bFA4769FB09eefC5a80d6E87c3B9C650f7Ae48E'
++  // !NOTICE - These are the custom addresses for the sepolia testnet
++  v3CoreFactoryAddress: '0x9475cccd3a9A32192d8Df3d87D735b384A90e0c0',
++  multicallAddress: '0x23D8Ebf34eD2BD2b9EF336b5cCe1bB98b9ec13C6',
++  quoterAddress: '0xCe06f9Ae466586D6e2BFBc781E133775b00C8d37',
++  v3MigratorAddress: '0x9B519CaEeFC19755fdD418252784cEF4C8060180',
++  nonfungiblePositionManagerAddress: '0xe88fF364e2AB659042dE828AC6e3cAeda154F0c4',
++  tickLensAddress: '0x8e2550eA5Fb9FFcE4e6e7044af4bC7c074F8E0F1',
++  swapRouter02Address: '0x3413760DF4e722287beA2484B1fC5A299006568F'
+ };
+ // Avalanche v3 addresses
+ var AVALANCHE_ADDRESSES = {

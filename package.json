@@ -23,6 +23,7 @@
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:lint": "eslint src --ext .ts --fix",
+    "postinstall": "patch-package",
     "prepare-release": "run-s cov:check doc:html version doc:publish",
     "test": "jest test/unit",
     "integ-test": "TS_NODE=true jest test/integ --testRunner='jest-circus/runner'"
@@ -55,6 +56,7 @@
     "lodash": "^4.17.21",
     "mnemonist": "^0.38.3",
     "node-cache": "^5.1.2",
+    "patch-package": "^8.0.0",
     "stats-lite": "^2.2.0"
   },
   "devDependencies": {

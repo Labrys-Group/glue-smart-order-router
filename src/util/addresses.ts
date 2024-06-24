@@ -1,5 +1,6 @@
 import {
   ChainId,
+  // eslint-disable-next-line sort-imports -- allow
   CHAIN_TO_ADDRESSES_MAP,
   SWAP_ROUTER_02_ADDRESSES as SWAP_ROUTER_02_ADDRESSES_HELPER,
   Token,
@@ -41,7 +42,6 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.BLAST]: CHAIN_TO_ADDRESSES_MAP[ChainId.BLAST].v3CoreFactoryAddress,
   [ChainId.ZORA]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZORA].v3CoreFactoryAddress,
   [ChainId.ZKSYNC]: CHAIN_TO_ADDRESSES_MAP[ChainId.ZKSYNC].v3CoreFactoryAddress,
-  [ChainId.SEPOLIA]: "0x9475cccd3a9A32192d8Df3d87D735b384A90e0c0"
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -75,7 +75,8 @@ export const NEW_QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.CELO]: '0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3',
   [ChainId.CELO_ALFAJORES]: '0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3',
   [ChainId.OPTIMISM_SEPOLIA]: '0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3',
-  [ChainId.SEPOLIA]: '0xf0c802dcb0cf1c4f7b953756b49d940eed190221',
+  // !NOTICE CHANGED
+  [ChainId.SEPOLIA]: '0xCe06f9Ae466586D6e2BFBc781E133775b00C8d37',
   [ChainId.ARBITRUM_SEPOLIA]: '0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3',
   [ChainId.BNB]: '0x5e55C9e631FAE526cd4B0526C4818D6e0a9eF0e3',
   [ChainId.AVALANCHE]: '0xf0c802dcb0cf1c4f7b953756b49d940eed190221',
@@ -119,8 +120,11 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
-export const SWAP_ROUTER_02_ADDRESSES= (chainId: number): string => {
-  return SWAP_ROUTER_02_ADDRESSES_HELPER(chainId) ?? '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45';
+export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
+  return (
+    SWAP_ROUTER_02_ADDRESSES_HELPER(chainId) ??
+    '0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45'
+  );
 };
 
 export const OVM_GASPRICE_ADDRESS =
@@ -181,7 +185,8 @@ export const WETH9: {
   ),
   [ChainId.SEPOLIA]: new Token(
     ChainId.SEPOLIA,
-    '0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14',
+    // !NOTICE: Changed
+    '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9',
     18,
     'WETH',
     'Wrapped Ether'
